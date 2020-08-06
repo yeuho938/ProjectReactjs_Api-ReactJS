@@ -1,0 +1,13 @@
+.newItem .newImage img{
+    width: 150px;
+    height: 150px;
+}
+.newItem{
+    margin-top: 2%;
+    display: flex;
+    margin-left: 20%;
+    width: 100%;
+}
+.newItem .newText #time_cateNew{
+    display: flex;
+}

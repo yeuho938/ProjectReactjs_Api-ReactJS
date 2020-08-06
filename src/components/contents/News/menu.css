@@ -1,0 +1,42 @@
+#newmenu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #e9d8f4;
+    height: 100%; /* chiều cao 100% */
+    /* position: fixed; cố định thanh điều hướng cả khi cuộn để đọc website */
+    /* overflow: auto; */
+  }
+  #newmenu{
+      margin-left: 10%;
+      height: 400px;
+  }
+  .boxnew{
+      display: flex;
+      width: 100%;
+  }
+  #newmenu ul li{
+    border-bottom: 1px solid #db7093;
+  }
+  #newmenu ul li a {
+    display: block;
+    color: #000;
+    font-weight: bold;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+  #newmenu #link{
+    text-decoration: none;
+  } 
+  #newmenu ul li a.active {
+    background-color: #58257b;
+    font-weight: bold;
+    color: white;
+  }
+  
+  #newmenu ul li a:hover:not(.active) {
+    background-color: #db7093;
+    font-weight: bold;
+    color: white;
+  }

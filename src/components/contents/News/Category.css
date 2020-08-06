@@ -1,0 +1,24 @@
+#category ul li{
+    border-bottom: 1px solid #db7093;
+  }
+  #category ul li a {
+    display: block;
+    color: #000;
+    font-weight: bold;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+  #category #link{
+    text-decoration: none;
+  }
+  #category ul li a.active {
+    background-color: #58257b;
+    font-weight: bold;
+    color: white;
+  }
+  
+  #category ul li a:hover:not(.active) {
+    background-color: #db7093;
+    font-weight: bold;
+    color: white;
+  }
