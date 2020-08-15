@@ -1,14 +1,15 @@
 .container{
 	width: 100%;
 	background-color: olive;
-	margin-top: 30%;
+	margin-top: auto;
 
 }
 .footer{
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	width: 80%;
+	grid-template-columns: 370px 370px 370px 370px;
+	width: 60%;
 	margin-left: 10%;
+	margin-top: 20%;
 }
 .footer #foot_col1,#foot_col2,#foot_col3,#foot_col4 li{
 	list-style-type: none;

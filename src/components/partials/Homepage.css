@@ -1,33 +1,27 @@
 .containerb #news{
-	margin-left: 10%;
-	width: 80%;
+	margin-left: 18.6%;
+	width: 63%;
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-columns: 250px 250px 250px 250px;
+    grid-column-gap: 40px;
 }
-.containerb #news #new1 i{
-	font-size: 30px;
-}
-.containerb #news #new2 i{
-	font-size: 30px;
-}
-
-.containerb #news #new3 i{
+.containerb #news .new_chilren i{
 	font-size: 30px;
 }
 
-.containerb #news #new4 i{
-	font-size: 30px;
+.new_chilren h3{
+	margin-left: 40%;
 }
 .containerb .slide-container{
 	margin-top: 20px;
 	margin-bottom: 20px;
-	width: 80%;
-	margin-left: 10%;
+	width: 70%;
+	margin-left: 18.5%;
 	border: 1px solid white;
 
 }
 .containerb .slide-container .each-slide{
-width: 100%;
+width: 90%;
 height: 600px;
 }
 
@@ -39,8 +33,29 @@ height: 600px;
 .slide-images{
 	margin-left: 30%;
 	width: 400px;
-	border: 1px solid rebeccapurple;
 }
 .each-slide1{
 	width: 300px;
+}
+#news{
+}
+.videos{
+	margin-left: 18.5%;
+	display: flex;
+}
+#videobig video{
+	width: 850px;
+	height: 650px;
+}
+#vdeonew{
+	margin-left: 3%;
+	margin-top: 1%;
+}
+#vdeonew video{
+height: 130px;
+width: 300px;
+margin-top: -10px;
+}
+#vdeonew h4{
+	margin-top: 0px;
 }

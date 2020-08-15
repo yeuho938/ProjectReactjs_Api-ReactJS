@@ -1,0 +1,54 @@
+
+#videomenu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #e9d8f4;
+    height: 100%; /* chiều cao 100% */
+    /* position: fixed; cố định thanh điều hướng cả khi cuộn để đọc website */
+    /* overflow: auto; */
+  }
+  #videomenu{
+      margin-left: 18.5%;
+      height: 400px;
+  }
+  .boxvideo{
+      display: flex;
+      width: 100%;
+  }
+  #videomenu ul li{
+    border-bottom: 1px solid #db7093;
+  }
+  #videomenu ul li a {
+    display: block;
+    color: #000;
+    font-weight: bold;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+  #videomenu #link{
+    text-decoration: none;
+  } 
+  #videomenu ul li a.active {
+    background-color: #58257b;
+    font-weight: bold;
+    color: white;
+  }
+  
+  #videomenu ul li a:hover:not(.active) {
+    background-color: #db7093;
+    font-weight: bold;
+    color: white;
+  }
+.videocontent{
+  margin-left: 3%;
+}
+.VideoItem{
+  display: flex;
+  margin-left: 5%;
+  margin-top: 20px;
+}
+.VideoText{
+  margin-left: 3%;
+}

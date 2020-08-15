@@ -19,6 +19,7 @@ import NewDetail from './components/contents/News/NewDetail';
 import VideoDetail from './components/contents/Videos/VideoDetail';
 import ImageDetail from './components/contents/Images/ImageDetail';
 import FilmDetail from './components/contents/Films/FilmDetail';
+import Phantrang from './components/contents/Films/Phantrang';
 import { 
   BrowserRouter as Router, 
   Switch,
@@ -95,7 +96,7 @@ render(){
                 <a href="#"><Link to = '/film' className='chu'> Phim</Link> <span className="arrow">▼</span></a>
                 <ul className="sub-menu">
                 {this.state.filmCategories.map((item,index)=>
-                <Link to={'/filmCategory/'+item.id}><li><a>{item.name}</a></li></Link>
+                <a href={'/filmCategory/'+item.id}><li><a>{item.name}</a></li></a>
                   )}
                 </ul>
             </li>
@@ -103,7 +104,7 @@ render(){
                 <a href="#"><Link to = '/image' className='chu'> Ảnh</Link> <span className="arrow">▼</span></a>
                 <ul className="sub-menu">
                 {this.state.imageCategories.map((item,index)=>
-                <Link to={'/imageCategory/'+item.id}><li><a>{item.name}</a></li></Link>
+                <a href={'/imageCategory/'+item.id}><li><a>{item.name}</a></li></a>
                   )}
                 </ul>
             </li>
@@ -111,7 +112,7 @@ render(){
                 <a href="#"><Link to = '/video' className='chu'> Video</Link> <span className="arrow">▼</span></a>
                 <ul className="sub-menu">
                 {this.state.videoCategories.map((item,index)=>
-                <Link to={'/videoCategory/'+item.id}><li><a>{item.name}</a></li></Link>
+                <a href={'/videoCategory/'+item.id}><li><a>{item.name}</a></li></a>
                   )}
                 </ul>
             </li>
@@ -119,7 +120,7 @@ render(){
                 <a href="#"><Link to = '/new' className='chu'> Tin tức</Link> <span className="arrow">▼</span></a>
                 <ul className="sub-menu">
                 {this.state.newCategories.map((item,index)=>
-                <Link to={'/newCategory/'+item.id}><li><a>{item.name}</a></li></Link>
+                <a href={'/newCategory/'+item.id}><li><a>{item.name}</a></li></a>
                   )}
                 </ul>
             </li>       
@@ -157,16 +158,16 @@ render(){
           <Route path='/user' exact> 
             <User />
           </Route>
-          <Route path={'/imageCategory/:id'} exact> 
+          <Route path={'/imageCategory/:id'} > 
             <ImageCategory />
           </Route>
-          <Route path={'/filmCategory/:id'} exact> 
+          <Route path={'/filmCategory/:id'} > 
             <FilmCategory />
           </Route>
-          <Route path={'/videoCategory/:id'} exact> 
+          <Route path={'/videoCategory/:id'} > 
             <VideoCategory />
           </Route>
-          <Route path={'/newCategory/:id'} exact> 
+          <Route path={'/newCategory/:id'} > 
             <NewCategory />
           </Route>
           <Route path={'/newdetail/:id'} exact> 

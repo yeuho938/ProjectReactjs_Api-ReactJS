@@ -2,19 +2,15 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
-    width: 200px;
-    background-color: #e9d8f4;
+    width: 250px;
+    background-image: linear-gradient(100deg, rgb(228, 140, 156), pink);
     height: 100%; /* chiều cao 100% */
     /* position: fixed; cố định thanh điều hướng cả khi cuộn để đọc website */
     /* overflow: auto; */
   }
   #newmenu{
-      margin-left: 10%;
-      height: 400px;
-  }
-  .boxnew{
-      display: flex;
-      width: 100%;
+      margin-left: 8.5%;
+      height: 450px;
   }
   #newmenu ul li{
     border-bottom: 1px solid #db7093;
@@ -40,3 +36,49 @@
     font-weight: bold;
     color: white;
   }
+  
+  #inputsearch{
+    width: 250px;
+    margin-top: 5px;
+  }
+  form{
+    display: flex;
+  }
+  form button {
+    margin-top: 5px;
+    height: 32px;
+    background-color: salmon;
+  }
+  
+  #danhmuc a{
+    background-color: Crimson;
+    -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    animation-name: example;
+    animation-duration: 4s;
+  }
+  
+  /* Safari 4.0 - 8.0 */
+  @-webkit-keyframes example {
+    0% {background-color: Crimson;}
+    25% {background-color: LightSalmon;}
+    50% {background-color: pink;}
+    100% {background-color: purple;}
+  }
+  
+  @keyframes example {
+    0% {background-color: Crimson;}
+    25% {background-color: LightSalmon;}
+    50% {background-color: pink;}
+    100% {background-color: indigo;}
+  }
+  #newmenu ul .link {
+    text-decoration: none;
+    color: blue;
+  }
+  ul Link li a{
+    font-family: 'Courier New', Courier, monospace;
+  }
+  ul li p{
+    font-family: Comic Sans MS;
+}

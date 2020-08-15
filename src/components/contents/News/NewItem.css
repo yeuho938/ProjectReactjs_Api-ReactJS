@@ -1,13 +1,40 @@
 .newItem .newImage img{
     width: 150px;
     height: 150px;
+    border-radius: 20%;
+
 }
 .newItem{
     margin-top: 2%;
     display: flex;
-    margin-left: 20%;
+    margin-left:5%;
     width: 100%;
+    border-bottom:  1px solid grey;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 .newItem .newText #time_cateNew{
     display: flex;
+}
+/* h3{
+    width:500px;
+    white-space:nowrap;
+    overflow:hidden;
+} */
+#nameNew{
+    overflow:hidden;
+    margin-top: -10px;
+    height: auto;
+}
+#text{
+    overflow:hidden;
+    margin-top: -10px;
+    height: 59px;
+    
+}
+#time_cateNew h4{
+    margin-top: auto;
+}
+.newText{
+    margin-left: 2%;
 }

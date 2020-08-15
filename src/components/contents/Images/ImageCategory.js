@@ -6,7 +6,7 @@ import {
     BrowserRouter as Router, 
     Link } 
   from "react-router-dom";
-  import './Image.css';
+
 class ImageCategory extends Component {
     constructor(props){
         super(props);
@@ -31,7 +31,7 @@ class ImageCategory extends Component {
         });  
         }  
     getImageCate(id){
-        fetch("http://127.0.0.1:8000/api/image/category/"+id)
+        fetch("http://127.0.0.1:8000/api/image/category/" +id)
         .then(response => {
                 response.json().then((data) =>  {
                     console.log(data);
@@ -52,16 +52,27 @@ class ImageCategory extends Component {
     }
     render() {
         return (
-            <div className='boximage'>
+            <div className='imageContainer'>
             <div id='newmenu'>
-            <ul>
-            <li><a class="active" href="#">Các loại hình ảnh</a></li>
-                {this.state.categories.map((item,index)=>
-                <Link to= {'/imageCategory/'+item.id} id ='link'><li key={index}><a>{item.name}</a></li></Link>
-                )}
-            </ul>
-            </div>
-            <div className='imagecontent'>
+                <ul>
+                <li id ='danhmuc'><a class="active" href="https://quantrimang.com/">DANH MỤC</a></li>
+                <li>
+                <form onSubmit ={this.onchange}>
+                 <input id="inputsearch" name ='txtSearch' type='text' placeholder='Search...'></input>
+                  {this.state.sear === true?(<div><a className='link' href ='/image'>X</a></div>):''}        
+                  <button className='btn btn-info' id="icon" onClick={this.search}><i class="fas fa-search"></i></button>      
+                </form>
+                </li>
+                <li style={{color:"green"}}><p>LOẠI HÌNH ẢNH >></p></li>
+                    {this.state.categories.map((item,index)=>
+                    <a href={'/imageCategory/'+ item.id} id ='link'><li key={index}><a>{item.name}</a></li></a>
+                    )}
+                 <li style={{color:"green"}}><p>XEM HÌNH ẢNH THEO TÊN >></p></li>
+                <Link className='link'><li><a onClick = {this.sortByNameAsc}>Tên từ A - Z</a></li></Link>
+                <Link className='link'><li><a onClick = {this.sortByNameDesc}>Tên từ Z - A</a></li></Link>
+                </ul>
+                </div>
+            <div id='imagecontent'>
                  {this.showImageCate()}
             </div>              
         </div>          

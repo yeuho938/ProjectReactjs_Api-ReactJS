@@ -1,8 +1,51 @@
 .menu1 li{
 color: black;
 }
-.boximage{
-    display: flex;
-    margin-top: 2%;
-    margin-left: 11%;
+
+  #containerDetailImage{
+    margin-top: 3%;
+    margin-left: 20%;
+    width: 60%;
   }
+  #containerDetailImage #imdetail{
+    margin-left:0px;
+    display: flex;
+  }
+  #containerDetailImage #imageRelax{
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px 200px;
+    grid-column-gap: 20px		
+  }
+     #imageAbout img {
+    padding: 30px;
+    transition: transform .2s; /* Animation */
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+  }
+  #imageAbout img:hover {
+    transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+  #content{
+    border-radius: 10%;
+    border: 1px solid grey;
+    height: 350px;
+    width: 350px;
+    margin-left: 3%;
+  }
+#image img{
+  width: 350px;
+  height: 350px;
+}
+#image{
+  margin-left: 17%;
+}
+#imageAbout h3{
+  margin-top:-30px;
+  margin-left: 20%;
+}
+#imagecontent{
+  display: grid;
+  grid-template-columns: 200px 200px 200px 200px;
+  grid-column-gap: 20px;
+}

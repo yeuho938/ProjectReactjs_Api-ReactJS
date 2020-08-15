@@ -5,8 +5,9 @@ import {
 class FilmItem extends Component {
     render() {
         return (
-            <div>
-                
+            <div id ='filmItem'>
+                <Link to ={'/filmdetail/' + this.props.item.id}> <img src={' http://127.0.0.1:8000/storage/'+this.props.item.image} /></Link>
+                <Link to ={'/filmdetail/' + this.props.item.category_id}> <h3>{this.props.item.name}</h3></Link>
             </div>
         );
     }

@@ -1,0 +1,56 @@
+#theloai{
+    display: flex;
+}
+#deta{
+    width: 63%;
+    margin: auto;
+
+}
+#containerDetailvi{
+    display: flex;
+    width: 100%;
+}
+#watchmost{
+    margin-left: 3%;
+    width: 40%;
+    border: 1px solid red;
+}
+#watchmost video{
+    width: 250px;
+    height: 250px
+}
+
+.videomost{
+    display: flex;
+}
+#videodetail video{
+    width: 700px;
+    height: 400px
+}
+#videodetail p{
+    margin-top: -10px
+
+}
+#videoMain{
+    width: 60%;
+    /* margin-left: 18.5%; */
+}
+#videonew p{
+ margin-top: -10px
+         }
+ .contentmostvideo {
+     
+     width:auto;
+ }
+ .contentmostvideo #theloai p{
+     margin-top: -10px;
+ }
+.newvideo{
+    display: grid;
+    grid-template-columns: 220px 220px 220px;
+    grid-gap: 20px;
+}
+.newvideo video{
+    width: 220px;
+    height: 150px;
+}

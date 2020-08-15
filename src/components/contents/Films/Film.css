@@ -1,0 +1,90 @@
+.filmContainer{
+    display: flex ;
+    width: 80%;
+    margin-left: 11.5%;
+}
+
+
+#filmcontent{
+    margin-left: 3%;
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px;
+    width: 62.5%;
+    grid-column-gap: 35px;
+  
+    
+}
+
+#filmnenu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #e9d8f4;
+    height: 100%; /* chiều cao 100% */
+    /* position: fixed; cố định thanh điều hướng cả khi cuộn để đọc website */
+    /* overflow: auto; */
+  }
+  #filmnenu{
+      margin-left: 8.5%;
+      height: 600px;
+  }
+
+  #filmnenu ul li{
+    border-bottom: 1px solid #db7093;
+  }
+  #filmnenu ul li a {
+    display: block;
+    color: #000;
+    font-weight: bold;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+  #filmnenu #link{
+    text-decoration: none;
+  } 
+  #filmnenu ul li a.active {
+    background-color: #58257b;
+    font-weight: bold;
+    color: white;
+  }
+  
+  #filmnenu ul li a:hover:not(.active) {
+    background-color: #db7093;
+    font-weight: bold;
+    color: white;
+  }
+#containerDetailFilm{
+    width: 63%;
+    margin-left: 18.5%;
+}
+#contentFilm video{
+  margin-left: 25%;
+}
+#image{
+  margin-left: 30%;
+}
+#contentFilm p{
+  margin-left: 3%;
+}
+#button_page{
+  color: red;
+}
+#page_number{
+  margin-top: 50%;
+  margin-left: 30%;
+  padding: 30px;
+}
+#imageRelax{
+  display: grid;
+  grid-template-columns: 220px 220px 220px 220px;
+  grid-column-gap: 30px;
+  margin-left: 5%;
+}
+#imageAbout #img{
+  width: 220px;
+  height: 250px;
+}
+#contentFilm video{
+width: 500px;
+}

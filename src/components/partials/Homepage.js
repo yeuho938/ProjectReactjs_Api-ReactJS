@@ -18,11 +18,15 @@ class Homepage extends Component {
         this.state = {
             images: [],
             videos: [],
-            news: []
+            news: [],
+            videoOne:[],
+            videonew:[]
         }     
         this.getImage(); 
         this.getNew(); 
         this.getVideo();     
+        this.getOnevideo();
+        this.videonew();
     }
     
     getImage(){
@@ -30,47 +34,62 @@ class Homepage extends Component {
         .then(response => {
                 response.json().then((data) =>  {
                     console.log(data);
-        this.updateImage(data);
+                    this.setState({
+                        images: data
+                    })
                 });
         });
-    
         }  
-    updateImage(data){
-        this.setState({
-            images: data
-        })
-    }
+        videonew(){
+            fetch("http://127.0.0.1:8000/api/admin/video/newvideo")
+            .then(response => {
+                    response.json().then((data) =>  {
+                        console.log(data);
+                        this.setState({
+                            videonew: data
+                        })
+                    });
+            });
+            }  
+        getOnevideo(){
+            fetch("http://127.0.0.1:8000/api/admin/video/getone")
+            .then(response => {
+                    response.json().then((data) =>  {
+                        console.log(data);
+                        this.setState({
+                            videoOne: data
+                        })
+                    });
+            });
+        
+            }  
+
     getNew(){
         fetch("http://127.0.0.1:8000/api/admin/new/index")
         .then(response => {
                 response.json().then((data) =>  {
                     console.log(data);
-        this.updateNew(data);
+                    this.setState({
+                        news: data
+                    })
                 });
         });
     
-        }  
-    updateNew(data){
-        this.setState({
-            news: data
-        })
-    }
+        } 
     getVideo(){
         fetch("http://127.0.0.1:8000/api/admin/video/index")
         .then(response => {
                 response.json().then((data) =>  {
                     console.log(data);
-        this.updateVideo(data);
+                    this.setState({
+                        videos: data
+                    })
                 });
         });
     
         }  
-        updateVideo(data){
-        this.setState({
-            videos: data
-        })
-    }
     render() {
+        let itemvideoOne = this.state.videoOne;
         return (
             <div className='containerb'>
                  <div className="slide-container">
@@ -104,37 +123,53 @@ class Homepage extends Component {
                     </div>
                  </div>
                    <div id="news">
-                        <div id='new1'>
-                            <center><i class="fas fa-film"></i></center>
-                            <center><h3> PHIM</h3></center>
+                        <div className='new_chilren'>
+                            <i class="fas fa-film"></i>
+                            <h3> PHIM</h3>
                             <p>Hình ảnh Bộ sưu tập Nghệ Sỹ - Ca sĩ - Cá Nhân</p>
                             <p> có thể được hiển thị dạng Gallery ảnh với hiệu ứng đẹp, hiện đại, bắt mắt.</p>
                         </div>
-                        <div id='new2'>
-                            <center><i class="fas fa-calendar-check"></i></center>
-                            <center><h3> SỰ KIỆN</h3></center>
+                        <div className='new_chilren'>
+                            <i class="fas fa-calendar-check"></i>
+                            <h3> SỰ KIỆN</h3>
                             <p>Hình ảnh Bộ sưu tập Nghệ Sỹ - Ca sĩ - Cá Nhân</p>
                             <p> có thể được hiển thị dạng Gallery ảnh với hiệu ứng đẹp, hiện đại, bắt mắt.</p>
                         </div>
-                        <div id='new3'>
-                            <center><i class="fas fa-images"></i></center>
-                            <center><h3> HÌNH ẢNH MỚI NHẤT</h3></center>
+                        <div className='new_chilren'>
+                            <i class="fas fa-images"></i>
+                            <h3> HÌNH ẢNH</h3>
                             <p>Hình ảnh Bộ sưu tập Nghệ Sỹ - Ca sĩ - Cá Nhân</p>
                             <p> có thể được hiển thị dạng Gallery ảnh với hiệu ứng đẹp, hiện đại, bắt mắt.</p>
                         </div>
-                        <div id='new4'>
-                            <center><i class="fas fa-video"></i></center>
-                            <center><h3> VIDEO NGẮN</h3></center>
+                        <div className='new_chilren'>
+                            <i class="fas fa-video"></i>
+                            <h3> VIDEO NGẮN</h3>
                             <p>Hình ảnh Bộ sưu tập Nghệ Sỹ - Ca sĩ - Cá Nhân</p>
                             <p> có thể được hiển thị dạng Gallery ảnh với hiệu ứng đẹp, hiện đại, bắt mắt.</p>
                         </div>
 
                         </div>
+                        <center><h2> CÁC VIDEO NỔI BẬT</h2></center>
                         <div className='videos'>
-                          
+                            
+                            <div id='videobig'>
+                            <video src={'http://127.0.0.1:8000/storage/'+itemvideoOne.video} controls></video>
+                            <h4>{itemvideoOne.name}</h4>
+                            </div>
+                            <div id ='vdeonew'>
+                                {this.state.videonew.map((newvideo,index)=>
+                                <div>
+                                 <video src={'http://127.0.0.1:8000/storage/'+newvideo.video} controls></video>
+                                 <h4>{newvideo.name}</h4>
+                                 </div>
+                                )}
+                                <a>Xem thêm >></a>
+                            </div>
+                            
                         </div>
-
+                            <center><h2> HÌNH ẢNH ĐƯỢC XEM NHIỀU</h2></center>
                         <div className="slide-images">
+                            
                             <Slide>
                                 {this.state.images.map((item)=>
                                     <div className="each-slide1">

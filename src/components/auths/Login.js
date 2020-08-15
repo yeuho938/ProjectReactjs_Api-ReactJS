@@ -29,11 +29,41 @@ class Login extends Component {
        return response.json();
     })
     .then((response)=>{
+      if(response.user_id!=null){
     console.log(response);
     localStorage.setItem("user_id",response.user_id);
-    this.props.history.push("/home");
+    this.props.history.push("/home");}
+    else{
+      alert("username or password is wrong!");
+    }
     });
 }
+// fetch("http://127.0.0.1:8000/api/auth/login", {
+//         method: "post",
+//         headers: {
+//             "Content-Type":"application/json"
+//         },
+//         body: postInJson
+//     })
+//     fetch(URL).then((response)=>{
+//     if(response.statusCode == 200){
+//       return response.json();
+//     }
+//     else{
+//       throw new Error('some thing wrong');
+//     }
+//     })
+//     .then((responseJson)=>{
+//       console.log(responseJson);
+//       localStorage.setItem("user_id",responseJson.user_id);
+//       this.props.history.push("/home");
+//     })
+//     .then((response) => {
+//        return response.json();
+//     })
+//     .catch((error)=>{
+//       console.log(error);
+//     })
     render() {
         return (
             <div className="login-form">

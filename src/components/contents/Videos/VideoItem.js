@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import { 
     Link } 
   from "react-router-dom";
+  import './Video.css';
 class VideoItem extends Component {
     render() {
         return (
             <div className='VideoItem'>
                 <div className='VideoImage'>
-                <Link to ={'/videodetail/' + this.props.item.id}> <video src={'http://127.0.0.1:8000/storage/' + this.props.item.video} controls></video> hhh</Link> 
+                <Link to ={'/videodetail/' + this.props.item.id}> <video src={'http://127.0.0.1:8000/storage/' + this.props.item.video} controls></video> </Link> 
                 </div>
                 <div className ='VideoText'>
                 <h3>{this.props.item.name}</h3>  

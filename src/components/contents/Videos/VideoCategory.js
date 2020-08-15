@@ -51,14 +51,25 @@ class VideoCategory extends Component {
     render() {
         return (
             <div className='boxnew'>
-            <div id='newmenu'>
-            <ul>
-            <li><a class="active" href="#">Các loại tìn tức</a></li>
-                {this.state.categories.map((item,index)=>
-                <Link to= {'/videoCategory/'+item.id} id ='link'><li key={index}><a>{item.name}</a></li></Link>
-                )}
-            </ul>
-            </div>
+             <div id='newmenu'>
+                <ul>
+                <li id ='danhmuc'><a class="active" href="https://quantrimang.com/">DANH MỤC</a></li>
+                <li>
+                <form onSubmit ={this.onchange}>
+                 <input id="inputsearch" name ='txtSearch' type='text' placeholder='Search...'></input>
+                  {this.state.sear === true?(<div><a className='link' href ='/image'>X</a></div>):''}        
+                  <button className='btn btn-info' id="icon" onClick={this.search}><i class="fas fa-search"></i></button>      
+                </form>
+                </li>
+                <li style={{color:"green"}}><p>VIDEO LIÊN QUAN >></p></li>
+                    {this.state.categories.map((item,index)=>
+                    <a href={'/imageCategory/'+ item.id} id ='link'><li key={index}><a>{item.name}</a></li></a>
+                    )}
+                 <li style={{color:"green"}}><p>XEM HÌNH ẢNH THEO TÊN >></p></li>
+                <Link className='link'><li><a onClick = {this.sortByNameAsc}>Tên từ A - Z</a></li></Link>
+                <Link className='link'><li><a onClick = {this.sortByNameDesc}>Tên từ Z - A</a></li></Link>
+                </ul>
+                </div>
             <div className='videocontent'>
                  {this.showVideoCate()}
             </div>              

@@ -1,4 +1,32 @@
-.boxnew{
-  margin-left: 10%;
-}
 
+#newdetail{
+  margin-top: 20px;
+  width: 60%;
+  margin-left: 20%;
+}
+#cate_datetime{
+  display: flex;
+  padding: 20px;
+}
+#datetime_new{
+  margin-left: 70%;
+}
+#newdetail img{
+  margin-left: 40%;
+}
+#content_new{
+  padding: 20px;
+  white-space:pre-line;
+}
+ #title_new{
+  margin-left: auto
+}
+#newcontent{
+  border-bottom: tan;
+  width: 60%;
+}
+.boxnew{
+  display: flex ;
+  width: 80%;
+  margin-left: 11.5%;
+}

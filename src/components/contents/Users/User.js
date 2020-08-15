@@ -25,7 +25,7 @@ class User extends Component {
   }
     updateUI(data) {
       this.setState({
-          user:data.user
+          user: data.user
       })
   }
 
