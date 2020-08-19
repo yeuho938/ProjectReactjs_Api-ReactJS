@@ -14,7 +14,8 @@ class Video extends Component {
             currentPage: 1,
             todosPerPage: 5,
             sortType: "asc",
-            search: ''
+            search: '',
+            sear: false
         }     
         this.getData(); 
         this.getCategory();   
@@ -22,6 +23,7 @@ class Video extends Component {
         this.sortByNameDesc = this.sortByNameDesc.bind(this);
         this.sortByNameAsc = this.sortByNameAsc.bind(this);
         this.sortByNewDate = this.sortByNewDate.bind(this);
+        this.search = this.search.bind(this);
         this.onchange = this.onchange.bind(this);
         
     }
@@ -90,6 +92,16 @@ class Video extends Component {
               search: search
            })
          }
+         search(){
+          const { search } = this.state;
+          const filteredProducts = this.state.videos.filter(item => {
+              return item.name.toLowerCase().indexOf(search.toLowerCase()) !== -1;
+          });
+          this.setState({
+            videos: filteredProducts,
+            sear:true
+         })
+         }
     render() {
         const {videos, currentPage, todosPerPage } = this.state;
         const indexOfLastTodo = currentPage * todosPerPage;
@@ -131,19 +143,20 @@ class Video extends Component {
           });
         return (
             <div className='boxvideo'>
-             <div id='newmenu' style={{marginLeft:"18.5%"}}>
+             <div id='newmenu' style={{marginLeft:"18.5%",marginTop:"30px"}}>
                 <ul>
                 <li id ='danhmuc'><a class="active" href="https://quantrimang.com/">DANH MỤC</a></li>
                 <li>
                 <form onSubmit={this.onchange}>
-                 <input id="inputsearch" name ='search' type='text' placeholder='Search...'></input>
-                 <button className='btn btn-info' id="icon"><i class="fas fa-search"></i></button>                
+                <input id="inputsearch" name ='txtSearch' type='text' placeholder='Search...'></input>
+                  {this.state.sear === true?(<a className='link' href ='/image'>X</a>):''}        
+                  <button className='btn btn-info' id="icon" onClick={this.search}><i class="fas fa-search"></i></button>                 
                 </form>
                 </li>
                 <li style={{color:"green"}}><p>LOẠI VIDEO>></p></li>
                     {this.state.categories.map((item,index)=>
                     <a href={'/videoCategory/'+item.id} id ='link'><li key={index}><a>{item.name}</a></li></a>
-                    )}
+                    )} 
                  <li style={{color:"green"}}><p> VIDEO THEO TÊN >></p></li>
                 <Link className='link'><li><a onClick = {this.sortByNameAsc}>Tên từ A - Z</a></li></Link>
                 <Link className='link'><li><a onClick = {this.sortByNameDesc}>Tên từ Z - A</a></li></Link>

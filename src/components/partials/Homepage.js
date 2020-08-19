@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import './Homepage.css';
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
- 
+import { 
+    Link } 
+  from "react-router-dom";
 const slideImages = [
   'image/sukien1.jpg',
   'image/sukien1.2.jpg',
@@ -30,7 +32,7 @@ class Homepage extends Component {
     }
     
     getImage(){
-        fetch("http://127.0.0.1:8000/api/admin/image/index")
+        fetch("http://127.0.0.1:8000/api/admin/image/newimage")
         .then(response => {
                 response.json().then((data) =>  {
                     console.log(data);
@@ -122,63 +124,34 @@ class Homepage extends Component {
                     </Slide>
                     </div>
                  </div>
-                   <div id="news">
-                        <div className='new_chilren'>
-                            <i class="fas fa-film"></i>
-                            <h3> PHIM</h3>
-                            <p>Hình ảnh Bộ sưu tập Nghệ Sỹ - Ca sĩ - Cá Nhân</p>
-                            <p> có thể được hiển thị dạng Gallery ảnh với hiệu ứng đẹp, hiện đại, bắt mắt.</p>
+                   <div id="news">                       
                         </div>
-                        <div className='new_chilren'>
-                            <i class="fas fa-calendar-check"></i>
-                            <h3> SỰ KIỆN</h3>
-                            <p>Hình ảnh Bộ sưu tập Nghệ Sỹ - Ca sĩ - Cá Nhân</p>
-                            <p> có thể được hiển thị dạng Gallery ảnh với hiệu ứng đẹp, hiện đại, bắt mắt.</p>
-                        </div>
-                        <div className='new_chilren'>
-                            <i class="fas fa-images"></i>
-                            <h3> HÌNH ẢNH</h3>
-                            <p>Hình ảnh Bộ sưu tập Nghệ Sỹ - Ca sĩ - Cá Nhân</p>
-                            <p> có thể được hiển thị dạng Gallery ảnh với hiệu ứng đẹp, hiện đại, bắt mắt.</p>
-                        </div>
-                        <div className='new_chilren'>
-                            <i class="fas fa-video"></i>
-                            <h3> VIDEO NGẮN</h3>
-                            <p>Hình ảnh Bộ sưu tập Nghệ Sỹ - Ca sĩ - Cá Nhân</p>
-                            <p> có thể được hiển thị dạng Gallery ảnh với hiệu ứng đẹp, hiện đại, bắt mắt.</p>
-                        </div>
-
-                        </div>
-                        <center><h2> CÁC VIDEO NỔI BẬT</h2></center>
-                        <div className='videos'>
-                            
+                        <marquee><h1 className='txtelegantshadow'> NGỒI NHÀ NHỎ CỦA TIỂU HẦU TỬ</h1></marquee>
+                        <center><h2> VIDEO NỔI BẬT</h2></center>
+                        <div className='videos'>                           
                             <div id='videobig'>
-                            <video src={'http://127.0.0.1:8000/storage/'+itemvideoOne.video} controls></video>
-                            <h4>{itemvideoOne.name}</h4>
+                            <Link to ={'/videodetail/' + itemvideoOne.id}><video src={'http://127.0.0.1:8000/storage/'+itemvideoOne.video} controls></video></Link>
+                            <h4 style={{marginLeft:"35%"}}>{itemvideoOne.name}</h4>
                             </div>
                             <div id ='vdeonew'>
                                 {this.state.videonew.map((newvideo,index)=>
                                 <div>
-                                 <video src={'http://127.0.0.1:8000/storage/'+newvideo.video} controls></video>
+                                  <Link to ={'/videodetail/' + newvideo.id}><video src={'http://127.0.0.1:8000/storage/'+newvideo.video} controls></video></Link>
                                  <h4>{newvideo.name}</h4>
                                  </div>
-                                )}
-                                <a>Xem thêm >></a>
+                                )}                               
                             </div>
+                            <a href='/video'>Xem thêm >></a>
                             
                         </div>
-                            <center><h2> HÌNH ẢNH ĐƯỢC XEM NHIỀU</h2></center>
-                        <div className="slide-images">
-                            
-                            <Slide>
+                            <center><h2> HÌNH ẢNH GẦN ĐÂY NHẤT</h2></center>
+                        <div className="slide-images">                           
                                 {this.state.images.map((item)=>
-                                    <div className="each-slide1">
-                                        <div style={{'backgroundImage': `url(${"http://127.0.0.1:8000/storage/"+item.image})`,height:"300px",width:"400px"}}>
-                                        </div>                                        
+                                    <div className="eachImage" >
+                                        <Link to ={'/imagedetail/' + item.id}><img src={' http://127.0.0.1:8000/storage/'+item.image} />  </Link>                                 
                                     </div>   
-                                )}
-                                        
-                            </Slide>
+                                )}     
+                                <a href='/image'>Xem thêm >></a>                                  
                         </div>
                         <div className='newsss'>
 

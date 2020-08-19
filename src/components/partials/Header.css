@@ -79,3 +79,37 @@
 .menu .chu{
     color: white;
 }
+/* ------------------------------------- */
+.menu .login li{
+    margin:0px;
+    list-style:none;
+    font-family:'Ek Mukta';
+}
+.menu .login li a{
+    transition:all linear 0.15s;
+    color:#919191;
+    text-decoration:none;
+}
+.menu li:hover > a, .menu .current-item > a {
+    text-decoration:none;
+    color:#be5b70;
+} 
+.menu .arrow {
+    font-size:11px;
+    line-height:0%;
+} 
+/*----- css cho phần menu cha -----*/
+.menu > ul > .login> li {
+    float:left;
+    display:inline-block;
+    position:relative;
+    font-size:19px;
+}
+.menu > ul >  .login li a {
+    padding:5px 10px;
+    display:inline-block;
+    color:white;
+}
+.menu > ul >  .login > li:hover > a, .menu > ul > .current-item > a {
+    background:#2e2728;
+}

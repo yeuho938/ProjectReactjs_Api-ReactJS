@@ -14,15 +14,16 @@ class Film extends Component {
             currentPage: 1,
             todosPerPage: 12,
             sortType: "asc",
-            search: ''
+            search: '',
+            sear: false,
         }   
         this.getData();  
         this.handleClick = this.handleClick.bind(this);
         this.getCategory();     
         this.sortByNameDesc = this.sortByNameDesc.bind(this);
         this.sortByNameAsc = this.sortByNameAsc.bind(this);
-        this.onchange = this.onchange.bind(this);
-
+        this.onchange = this.onchange.bind(this); 
+        this.search = this.search.bind(this);
     }
     handleClick(event) {
         this.setState({
@@ -80,6 +81,16 @@ class Film extends Component {
             search: search
          })
        }
+       search(){
+        const { search } = this.state;
+        const filteredProducts = this.state.films.filter(item => {
+            return item.name.toLowerCase().indexOf(search.toLowerCase()) !== -1;
+        });
+        this.setState({
+          films: filteredProducts,
+          sear:true
+       })
+       }
     render() {
         const { films, currentPage, todosPerPage } = this.state;
         const indexOfLastTodo = currentPage * todosPerPage;
@@ -116,8 +127,9 @@ class Film extends Component {
                 <li id ='danhmuc'><a class="active" href="https://quantrimang.com/">DANH MỤC</a></li>
                 <li>
                 <form onSubmit={this.onchange}>
-                 <input id="inputsearch" name ='search' type='text' placeholder='Search...'></input>
-                 <button className='btn btn-info' id="icon"><i class="fas fa-search"></i></button>                
+                <input id="inputsearch" name ='txtSearch' type='text' placeholder='Search...'></input>
+                  {this.state.sear === true?(<a className='link' href ='/image'>X</a>):''}        
+                  <button className='btn btn-info' id="icon" onClick={this.search}><i class="fas fa-search"></i></button>                   
                 </form>
                 </li>
                 <li style={{color:"green"}}><p> LOẠI PHIM >></p></li>

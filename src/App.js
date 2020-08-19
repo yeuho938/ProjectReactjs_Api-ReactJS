@@ -20,6 +20,7 @@ import VideoDetail from './components/contents/Videos/VideoDetail';
 import ImageDetail from './components/contents/Images/ImageDetail';
 import FilmDetail from './components/contents/Films/FilmDetail';
 import Phantrang from './components/contents/Films/Phantrang';
+
 import { 
   BrowserRouter as Router, 
   Switch,
@@ -29,16 +30,20 @@ from "react-router-dom";
 class  App extends Component {
   constructor(){
     super();
+    let user = localStorage.getItem("user_id");
+    let login = user?true:false;
     this.state = {
       filmCategories: [],
       imageCategories: [],
       videoCategories: [],
-      newCategories: []
+      newCategories: [],
+      login: user
     }     
     this.getFilmCate();
     this.getImageCate();    
     this.getVideoCate();
-    this.getNewCate();   
+    this.getNewCate();  
+    this.logOut=this.logOut.bind(this);
 }
 
 getImageCate(){
@@ -85,13 +90,19 @@ getFilmCate(){
               });
       });
       }  
+      logOut(){
+        localStorage.removeItem("user_id");
+        this.setState({
+          login: []
+       })
+      }
 render(){
   return (
     <Router>
         <div className="wrapper">
         <nav className="menu">
             <ul className="clearfix">
-            <li><a href="#"><Link to = '/home' className='chu'> Trang chủ</Link></a></li>
+            <li><a href="#"><Link to = '/' className='chu'> Trang chủ</Link></a></li>
             <li>
                 <a href="#"><Link to = '/film' className='chu'> Phim</Link> <span className="arrow">▼</span></a>
                 <ul className="sub-menu">
@@ -125,14 +136,18 @@ render(){
                 </ul>
             </li>       
             <li><a href="#">Liên hệ</a></li>
+            {this.state.login?( <div className='login'>
+            <li><a type='submit' href='/' onClick={this.logOut} >Log Out</a></li>
+             <li><a href="#"><Link to = '/user' className='chu'> Your Profile</Link></a></li>
+            </div>):(<div className='login'>
             <li><a href="#"><Link to = '/login' className='chu'> Đăng nhập</Link></a></li>
-            <li><a href="#"><Link to = '/register' className='chu'> Đăng ký</Link></a></li>
-            <li><a href="#"><Link to = '/user' className='chu'> User</Link></a></li>
+            <li><a href="#"><Link to = '/register' className='chu'> Đăng ký</Link></a></li></div>)}
+           
             </ul>
         </nav>
       </div>
       <Switch>
-          <Route path='/home'> 
+          <Route path='/' exact> 
             <Homepage />
           </Route>
 

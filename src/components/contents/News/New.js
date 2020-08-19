@@ -15,15 +15,16 @@ class New extends Component {
             currentPage: 1,
             todosPerPage: 5,
             sortType: "asc",
-            search: ''
+            search: '',
+            sear: false
         }     
         this.getData(); 
         this.getCategory();      
+        this.search = this.search.bind(this);
+        this.onchange = this.onchange.bind(this);
         this.handleClick = this.handleClick.bind(this);
         this.sortByNameDesc = this.sortByNameDesc.bind(this);
         this.sortByNameAsc = this.sortByNameAsc.bind(this);
-        this.onchange = this.onchange.bind(this);
-
 
     }
     handleClick(event) {
@@ -75,7 +76,17 @@ class New extends Component {
         news: productsort
        })
      } 
-     onchange(event) {
+     search(){
+      const { search } = this.state;
+      const filteredProducts = this.state.news.filter(item => {
+          return item.name.toLowerCase().indexOf(search.toLowerCase()) !== -1;
+      });
+      this.setState({
+        news: filteredProducts,
+        sear:true
+     })
+     }
+     onchange(event){
       event.preventDefault();
       var search = event.target["search"].value;
       this.setState({
@@ -117,8 +128,9 @@ class New extends Component {
                 <li id ='danhmuc'><a class="active" href="https://quantrimang.com/">DANH MỤC</a></li>
                 <li>
                 <form onSubmit={this.onchange}>
-                 <input id="inputsearch" name ='search' type='text' placeholder='Search...'></input>
-                 <button className='btn btn-info' id="icon"><i class="fas fa-search"></i></button>                
+                  <input id="inputsearch" name ='txtSearch' type='text' placeholder='Search...'></input>
+                  {this.state.sear === true?(<a className='link' href ='/image'>X</a>):''}        
+                  <button className='btn btn-info' id="icon" onClick={this.search}><i class="fas fa-search"></i></button>                   
                 </form>
                 </li>
                 <li style={{color:"green"}}><p> LOẠI TIN TỨC >></p></li>

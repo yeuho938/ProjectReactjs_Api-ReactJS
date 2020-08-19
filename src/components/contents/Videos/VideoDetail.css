@@ -13,11 +13,10 @@
 #watchmost{
     margin-left: 3%;
     width: 40%;
-    border: 1px solid red;
 }
 #watchmost video{
-    width: 250px;
-    height: 250px
+    width: 220px;
+    height: 180px
 }
 
 .videomost{
@@ -33,24 +32,24 @@
 }
 #videoMain{
     width: 60%;
+    height: auto;
     /* margin-left: 18.5%; */
 }
 #videonew p{
  margin-top: -10px
          }
  .contentmostvideo {
-     
+    margin-top: 10px;
      width:auto;
  }
  .contentmostvideo #theloai p{
      margin-top: -10px;
  }
-.newvideo{
-    display: grid;
-    grid-template-columns: 220px 220px 220px;
-    grid-gap: 20px;
+
+textarea{
+    width: 400px;
+    height: 60px;
 }
-.newvideo video{
-    width: 220px;
-    height: 150px;
+#deta{
+    margin-top: 20px;
 }

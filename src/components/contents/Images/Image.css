@@ -1,6 +1,9 @@
 .menu1 li{
 color: black;
 }
+.imageContainer{
+  margin-top: 2%;
+}
 
   #containerDetailImage{
     margin-top: 3%;

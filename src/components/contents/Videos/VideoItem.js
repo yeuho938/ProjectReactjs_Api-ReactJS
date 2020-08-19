@@ -13,10 +13,8 @@ class VideoItem extends Component {
                 <div className ='VideoText'>
                 <h3>{this.props.item.name}</h3>  
                 <span id ='time_cateNew'> 
-                <h3>{this.props.item.category_id}</h3> 
                 <h3>{this.props.item.datetime}</h3> 
                  </span>            
-               
                 </div>
             </div>   
         );
