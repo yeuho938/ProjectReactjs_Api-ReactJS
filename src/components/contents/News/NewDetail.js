@@ -76,7 +76,7 @@ class NewDetail extends Component {
         });
         }
         likeNew(event){
-            if(this.state.login!=null){
+            if(this.state.login != null){
             event.preventDefault();
             let user_id = localStorage.getItem('user_id');
             let new_id = this.props.match.params.id;;

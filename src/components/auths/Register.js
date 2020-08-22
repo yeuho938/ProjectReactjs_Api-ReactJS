@@ -40,9 +40,8 @@ class Register extends Component {
     .then((response) => {
         console.log(response);
         alert(' Bạn đã đăng ký thành công!')
-        //this.props.history.push("/posts"); // chuyển trang
+        this.props.history.push("/login"); // chuyển trang
     });
-    this.props.history.push("/home");
 }
     render() {
         return (

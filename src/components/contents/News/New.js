@@ -88,7 +88,7 @@ class New extends Component {
      }
      onchange(event){
       event.preventDefault();
-      var search = event.target["search"].value;
+      var search = event.target["txtSearch"].value;
       this.setState({
           search: search
        })

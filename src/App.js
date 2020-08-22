@@ -19,8 +19,7 @@ import NewDetail from './components/contents/News/NewDetail';
 import VideoDetail from './components/contents/Videos/VideoDetail';
 import ImageDetail from './components/contents/Images/ImageDetail';
 import FilmDetail from './components/contents/Films/FilmDetail';
-import Phantrang from './components/contents/Films/Phantrang';
-
+import Introduce from './components/Introduce';
 import { 
   BrowserRouter as Router, 
   Switch,
@@ -135,7 +134,7 @@ render(){
                   )}
                 </ul>
             </li>       
-            <li><a href="#">Liên hệ</a></li>
+            <li><a href="/introduce">Giới thiệu</a></li>
             {this.state.login?( <div className='login'>
             <li><a type='submit' href='/' onClick={this.logOut} >Log Out</a></li>
              <li><a href="#"><Link to = '/user' className='chu'> Your Profile</Link></a></li>
@@ -196,7 +195,10 @@ render(){
           </Route>   
           <Route path={'/filmdetail/:id'} exact> 
             <FilmDetail />
-          </Route>          
+          </Route>  
+          <Route path='/introduce' exact> 
+            <Introduce />
+          </Route>         
     </Switch>
     <div>
       <Footer />

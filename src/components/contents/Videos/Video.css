@@ -47,14 +47,15 @@
 .VideoItem{
   display: flex;
   margin-left: 5%;
-  border: 1px solid red;
   width: 600px;
 }
 .VideoText{
   margin-left: 3%;
+  margin-top: 20px;
 }
 .VideoImage video{
   width: 300px;
   height: 250px;
   margin-top: 0px;
 }
+

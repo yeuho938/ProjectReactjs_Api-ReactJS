@@ -18,7 +18,7 @@ class Header extends Component {
                 </li>
                 <li><a href="#">Ảnh</a></li>
                 <li className="current-item"><a href="#">Video</a></li>
-                <li><a href="#">Liên hệ</a></li>
+                <li><a href="#">Giới thiệu</a></li>
                 </ul>
             </nav>
         </div>

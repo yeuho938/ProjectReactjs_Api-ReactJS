@@ -33,11 +33,13 @@ class User extends Component {
     render() {
         return (
             <div>
-              <h2>Hello</h2>
-                 <div>
-                     <h2>{this.state.user.id}</h2>
-                     <h2>{this.state.user.name}</h2>
-                     <h2>{this.state.user.username}</h2>
+                 <div style={{marginLeft:"20%",marginTop:"30px"}}>
+                     <h2>Your information</h2>
+                     <h3> Tên: {this.state.user.fullname}</h3>
+                     <h3> Username: {this.state.user.username}</h3>
+                     <h3> Email: {this.state.user.email}</h3>
+                     <h3> Address: {this.state.user.address}</h3>
+                     <h3> Phone: {this.state.user.phone}</h3>
                  </div>
                   
             </div>
