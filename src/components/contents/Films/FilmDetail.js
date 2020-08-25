@@ -147,7 +147,7 @@ getAllLike(id){
                     </div>
                    <div className='cont' style={{marginLeft:"20px"}}>
                    <h3>{item.name}</h3>
-                    <p><b> Thể loại:</b> {item.category_name}</p>
+                    <p> <b> Thể loại:</b> {item.category_name}</p>
                     <p> <b>Năm sản xuất:</b> {item.datetime}</p>
                     <p> <b>Trạng thái:</b> {item.status}</p>
                     <p> <b>Nội dung:</b> {item.content}</p>
